@@ -1,0 +1,226 @@
+/* =========================================================
+   JHENNYFER NASCIMENTO
+   ANIMATIONS.CSS
+========================================================= */
+
+
+/* =========================================================
+   REVEAL BASE
+========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform:
+    translateY(28px);
+
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* ativado pelo app.js */
+
+.reveal.is-visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   ENTRADA DO HERO
+========================================================= */
+
+.hero-content.reveal {
+  transform:
+    translateY(18px);
+}
+
+.hero-visual.reveal {
+  transform:
+    translateY(22px)
+    scale(0.985);
+}
+
+.hero-content.reveal.is-visible {
+  transform:
+    translateY(0);
+}
+
+.hero-visual.reveal.is-visible {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =========================================================
+   PORTFOLIO
+========================================================= */
+
+.portfolio-card.reveal {
+  transform:
+    translateY(30px);
+}
+
+.portfolio-card.reveal.is-visible {
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   SERVICE ITEMS
+========================================================= */
+
+.service-item.reveal {
+  transform:
+    translateX(-18px);
+
+  opacity: 0;
+}
+
+.service-item.reveal.is-visible {
+  transform:
+    translateX(0);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-item.reveal {
+  transform:
+    translateY(24px);
+
+  opacity: 0;
+}
+
+.process-item.reveal.is-visible {
+  transform:
+    translateY(0);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   AUDIENCE TAGS
+========================================================= */
+
+.audience-list .reveal {
+  transform:
+    translateY(12px)
+    scale(0.96);
+}
+
+.audience-list .reveal.is-visible {
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =========================================================
+   INTERAÇÕES
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .hero-services span {
+    transition:
+      transform 0.22s ease,
+      background-color 0.22s ease,
+      border-color 0.22s ease;
+  }
+
+  .hero-services span:hover {
+    transform:
+      translateY(-2px);
+
+    background:
+      rgba(198, 170, 146, 0.12);
+
+    border-color:
+      rgba(169, 137, 112, 0.34);
+  }
+
+
+  .audience-list span {
+    transition:
+      transform 0.22s ease,
+      background-color 0.22s ease,
+      border-color 0.22s ease;
+  }
+
+  .audience-list span:hover {
+    transform:
+      translateY(-3px);
+
+    background:
+      rgba(198, 170, 146, 0.16);
+
+    border-color:
+      rgba(169, 137, 112, 0.32);
+  }
+
+
+  .contact-direct a {
+    transition:
+      padding-left 0.22s ease,
+      background-color 0.22s ease;
+  }
+
+  .contact-direct a:hover {
+    padding-left: 10px;
+
+    background:
+      rgba(198, 170, 146, 0.06);
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION / ACESSIBILIDADE
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  .reveal,
+  .hero-content.reveal,
+  .hero-visual.reveal,
+  .portfolio-card.reveal,
+  .service-item.reveal,
+  .process-item.reveal,
+  .audience-list .reveal {
+    opacity: 1;
+
+    transform: none;
+  }
+
+}

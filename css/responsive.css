@@ -1,0 +1,1941 @@
+/* =========================================================
+   JHENNYFER NASCIMENTO
+   SOCIAL MEDIA & VIDEOMAKER
+   RESPONSIVE.CSS
+========================================================= */
+
+
+/* =========================================================
+   DESKTOP MENOR
+   <= 1180px
+========================================================= */
+
+@media (max-width: 1180px) {
+
+  .container {
+    width: min(
+      calc(100% - 40px),
+      var(--container)
+    );
+  }
+
+
+  /* HEADER */
+
+  .desktop-nav {
+    gap: 18px;
+  }
+
+  .desktop-nav a {
+    font-size: 0.72rem;
+  }
+
+  .header-cta {
+    padding-inline: 15px;
+  }
+
+
+  /* HERO */
+
+  .hero-grid {
+    grid-template-columns:
+      0.95fr
+      1.05fr;
+
+    gap: 42px;
+  }
+
+  .hero-visual {
+    padding-left: 30px;
+  }
+
+  .hero-photo {
+    height: 640px;
+  }
+
+  .hero-monogram {
+    font-size: 5rem;
+  }
+
+
+  /* MANIFESTO */
+
+  .manifesto-grid {
+    gap: 70px;
+  }
+
+
+  /* PORTFOLIO */
+
+  .portfolio-featured
+  .portfolio-media {
+    min-height: 420px;
+  }
+
+
+  /* EDITORIAL */
+
+  .editorial-grid {
+    gap: 6%;
+  }
+
+
+  /* ABOUT */
+
+  .about-grid {
+    gap: 7%;
+  }
+
+
+  /* CONTACT */
+
+  .contact-grid {
+    gap: 7%;
+  }
+
+}
+
+
+
+/* =========================================================
+   TABLET / MENU MOBILE
+   <= 1024px
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  html {
+    scroll-padding-top: 78px;
+  }
+
+
+  .section {
+    padding:
+      88px
+      0;
+  }
+
+
+  /* =====================================================
+     HEADER
+  ====================================================== */
+
+  .header-inner {
+    min-height: 74px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .header-instagram {
+    display: none;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+
+
+  /* MENU TOGGLE */
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: 1px solid var(--line);
+    border-radius: 50%;
+  }
+
+  .menu-toggle span {
+    width: 18px;
+    height: 1.5px;
+
+    display: block;
+
+    background: var(--ink);
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"]
+  span:first-child {
+    transform:
+      translateY(3.75px)
+      rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"]
+  span:last-child {
+    transform:
+      translateY(-3.75px)
+      rotate(-45deg);
+  }
+
+
+  /* MENU MOBILE */
+
+  .mobile-menu {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 99;
+
+    display: flex;
+    flex-direction: column;
+
+    padding:
+      14px
+      20px
+      24px;
+
+    background:
+      rgba(247, 242, 236, 0.98);
+
+    border-bottom:
+      1px solid
+      var(--line);
+
+    box-shadow:
+      0 18px 35px
+      rgba(30, 22, 17, 0.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .mobile-menu[hidden] {
+    display: none !important;
+  }
+
+  .mobile-menu a {
+    display: flex;
+    align-items: center;
+
+    min-height: 52px;
+
+    padding:
+      10px
+      4px;
+
+    color: var(--ink);
+
+    border-bottom:
+      1px solid
+      var(--line-soft);
+
+    font-family:
+      var(--font-display);
+
+    font-size: 1.45rem;
+    font-weight: 600;
+  }
+
+  .mobile-menu a:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* =====================================================
+     HERO
+  ====================================================== */
+
+  .hero {
+    padding:
+      36px
+      0
+      76px;
+  }
+
+  .hero-grid {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 52px;
+  }
+
+  .hero-content {
+    max-width: 760px;
+  }
+
+  h1 {
+    font-size:
+      clamp(
+        4.6rem,
+        10vw,
+        7rem
+      );
+  }
+
+  .hero-description {
+    max-width: 600px;
+  }
+
+  .hero-services {
+    margin-top: 46px;
+  }
+
+  .hero-visual {
+    width: min(
+      100%,
+      760px
+    );
+
+    min-height: 0;
+
+    margin-inline: auto;
+
+    padding:
+      0
+      0
+      0
+      34px;
+  }
+
+  .hero-photo {
+    height: auto;
+
+    aspect-ratio: 4 / 5;
+
+    border-radius:
+      170px
+      26px
+      26px
+      26px;
+  }
+
+
+  /* =====================================================
+     MANIFESTO
+  ====================================================== */
+
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .manifesto-text {
+    max-width: 680px;
+
+    padding-top: 0;
+  }
+
+
+  /* =====================================================
+     SERVICES
+  ====================================================== */
+
+  .service-content {
+    grid-template-columns:
+      minmax(220px, 0.8fr)
+      1.2fr;
+
+    gap: 34px;
+  }
+
+
+  /* =====================================================
+     PORTFOLIO
+  ====================================================== */
+
+  .portfolio-featured
+  .portfolio-media {
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+  }
+
+  .portfolio-card:not(.portfolio-featured)
+  .portfolio-media {
+    min-height: 0;
+  }
+
+
+  /* =====================================================
+     EDITORIAL
+  ====================================================== */
+
+  .editorial-grid {
+    grid-template-columns: 1fr;
+
+    gap: 54px;
+  }
+
+  .editorial-image {
+    max-width: 760px;
+
+    margin-inline: auto;
+  }
+
+  .editorial-content {
+    max-width: 680px;
+  }
+
+
+  /* =====================================================
+     PROCESS
+  ====================================================== */
+
+  .process-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .process-item {
+    min-height: 240px;
+  }
+
+  .process-item + .process-item {
+    border-left: 0;
+  }
+
+  .process-item:nth-child(even) {
+    padding-left: 26px;
+
+    border-left:
+      1px solid
+      var(--line);
+  }
+
+  .process-item:nth-child(n + 3) {
+    border-top:
+      1px solid
+      var(--line);
+  }
+
+
+  /* =====================================================
+     ABOUT
+  ====================================================== */
+
+  .about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 52px;
+  }
+
+  .about-content {
+    max-width: 680px;
+  }
+
+  .about-photo {
+    width: min(
+      100%,
+      720px
+    );
+
+    margin-inline: auto;
+  }
+
+
+  /* =====================================================
+     CONTACT
+  ====================================================== */
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 54px;
+  }
+
+  .contact-intro {
+    position: static;
+
+    max-width: 680px;
+  }
+
+
+  /* =====================================================
+     FOOTER
+  ====================================================== */
+
+  .footer-main {
+    grid-template-columns:
+      1fr
+      0.6fr
+      0.6fr;
+
+    gap: 38px;
+  }
+
+}
+
+
+
+/* =========================================================
+   TABLET / MOBILE GRANDE
+   <= 820px
+========================================================= */
+
+@media (max-width: 820px) {
+
+  .container {
+    width: auto;
+
+    margin-left:
+      max(18px, env(safe-area-inset-left));
+
+    margin-right:
+      max(18px, env(safe-area-inset-right));
+  }
+
+  .section {
+    padding:
+      76px
+      0;
+  }
+
+
+  /* =====================================================
+     TYPOGRAPHY
+  ====================================================== */
+
+  h2 {
+    font-size:
+      clamp(
+        2.9rem,
+        9vw,
+        4.8rem
+      );
+  }
+
+  .section-heading {
+    margin-bottom: 42px;
+  }
+
+
+  /* =====================================================
+     HEADER
+  ====================================================== */
+
+  .brand-logo {
+    width: 44px;
+    height: 44px;
+
+    flex-basis: 44px;
+  }
+
+  .brand-text strong {
+    font-size: 1.16rem;
+  }
+
+  .brand-text small {
+    font-size: 0.49rem;
+  }
+
+  .header-cta {
+    min-height: 42px;
+
+    padding:
+      10px
+      14px;
+
+    font-size: 0.66rem;
+  }
+
+
+  /* =====================================================
+     HERO
+  ====================================================== */
+
+  .hero-grid {
+    gap: 46px;
+  }
+
+  h1 {
+    font-size:
+      clamp(
+        4.15rem,
+        12vw,
+        6.2rem
+      );
+  }
+
+  .hero-services {
+    margin-top: 40px;
+  }
+
+
+  /* =====================================================
+     SERVICES
+  ====================================================== */
+
+  .service-item {
+    grid-template-columns:
+      54px
+      1fr
+      auto;
+
+    gap: 18px;
+  }
+
+  .service-content {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .service-content p {
+    max-width: 560px;
+  }
+
+
+  /* =====================================================
+     PORTFOLIO
+  ====================================================== */
+
+  .portfolio-grid {
+    gap:
+      38px
+      18px;
+  }
+
+  .portfolio-info h3 {
+    font-size: 1.72rem;
+  }
+
+  .play-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+
+  /* =====================================================
+     QUOTE
+  ====================================================== */
+
+  .quote-section {
+    padding:
+      110px
+      0;
+  }
+
+
+  /* =====================================================
+     FINAL CTA
+  ====================================================== */
+
+  .final-cta-card {
+    min-height: 430px;
+
+    padding:
+      64px
+      48px;
+  }
+
+  .final-cta-card::after {
+    font-size: 13rem;
+  }
+
+
+  /* =====================================================
+     FORM
+  ====================================================== */
+
+  .brief-form {
+    padding: 34px;
+  }
+
+
+  /* =====================================================
+     FOOTER
+  ====================================================== */
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 38px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+   <= 680px
+========================================================= */
+
+@media (max-width: 680px) {
+
+  .container {
+    margin-left:
+      max(16px, env(safe-area-inset-left));
+
+    margin-right:
+      max(16px, env(safe-area-inset-right));
+  }
+
+  .section {
+    padding:
+      68px
+      0;
+  }
+
+
+  /* =====================================================
+     HEADER
+  ====================================================== */
+
+  .header-inner {
+    min-height: 70px;
+  }
+
+  .brand-text strong {
+    font-size: 1.08rem;
+  }
+
+  .brand-text small {
+    letter-spacing: 0.1em;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+
+  /* =====================================================
+     HERO
+  ====================================================== */
+
+  .hero {
+    padding:
+      30px
+      0
+      64px;
+  }
+
+  .hero-grid {
+    gap: 40px;
+  }
+
+  .eyebrow {
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    margin-bottom: 26px;
+
+    font-size:
+      clamp(
+        3.5rem,
+        14vw,
+        5.1rem
+      );
+
+    line-height: 0.91;
+  }
+
+  .hero-description {
+    margin-bottom: 28px;
+  }
+
+  .hero-actions {
+    gap: 18px;
+  }
+
+  .hero-services {
+    margin-top: 36px;
+  }
+
+  .hero-visual {
+    padding-left: 18px;
+  }
+
+  .hero-photo {
+    border-radius:
+      120px
+      22px
+      22px
+      22px;
+  }
+
+  .hero-monogram {
+    font-size: 4rem;
+  }
+
+
+  /* =====================================================
+     SERVICES
+  ====================================================== */
+
+  .service-item {
+    grid-template-columns:
+      1fr
+      auto;
+
+    gap:
+      8px
+      16px;
+
+    min-height: 0;
+
+    padding:
+      26px
+      0;
+  }
+
+  .service-index {
+    grid-column: 1 / -1;
+  }
+
+  .service-content {
+    grid-column: 1;
+  }
+
+  .service-arrow {
+    grid-column: 2;
+    grid-row: 2;
+
+    align-self: start;
+  }
+
+  .service-item:hover {
+    padding-left: 0;
+  }
+
+
+  /* =====================================================
+     PORTFOLIO
+  ====================================================== */
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+  }
+
+  .portfolio-featured {
+    grid-column: auto;
+  }
+
+  .portfolio-featured
+  .portfolio-media,
+  .portfolio-card:not(.portfolio-featured)
+  .portfolio-media {
+    min-height: 0;
+
+    aspect-ratio: 4 / 3;
+  }
+
+  .portfolio-info {
+    padding-top: 14px;
+  }
+
+
+  /* =====================================================
+     EDITORIAL
+  ====================================================== */
+
+  .editorial-grid {
+    gap: 42px;
+  }
+
+  .editorial-image img {
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 22px;
+  }
+
+
+  /* =====================================================
+     PROCESS
+  ====================================================== */
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-item,
+  .process-item:nth-child(even) {
+    min-height: 0;
+
+    padding:
+      26px
+      0;
+
+    border-left: 0;
+    border-top:
+      1px solid
+      var(--line);
+  }
+
+  .process-item:first-child {
+    border-top: 0;
+  }
+
+  .process-number {
+    margin-bottom: 30px;
+  }
+
+
+  /* =====================================================
+     QUOTE
+  ====================================================== */
+
+  .quote-section {
+    padding:
+      94px
+      0;
+  }
+
+  .quote-section blockquote {
+    font-size:
+      clamp(
+        3rem,
+        13vw,
+        5rem
+      );
+  }
+
+  .quote-section
+  blockquote > span {
+    top: -38px;
+    left: -8px;
+
+    font-size: 6rem;
+  }
+
+
+  /* =====================================================
+     ABOUT
+  ====================================================== */
+
+  .about-photo {
+    padding:
+      22px
+      0
+      0
+      24px;
+  }
+
+  .about-photo::before {
+    font-size: 4rem;
+  }
+
+  .about-photo img {
+    max-height: none;
+
+    border-radius:
+      110px
+      22px
+      22px
+      22px;
+  }
+
+
+  /* =====================================================
+     AUDIENCE
+  ====================================================== */
+
+  .audience-list {
+    gap: 10px;
+  }
+
+  .audience-list span {
+    padding:
+      12px
+      16px;
+
+    font-size: 1.2rem;
+  }
+
+
+  /* =====================================================
+     FINAL CTA
+  ====================================================== */
+
+  .final-cta-card {
+    min-height: 0;
+
+    padding:
+      52px
+      30px;
+
+    border-radius: 26px;
+  }
+
+  .final-cta-card::after {
+    right: -34px;
+    bottom: -50px;
+
+    font-size: 10rem;
+  }
+
+  .final-cta-actions {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  /* =====================================================
+     CONTACT
+  ====================================================== */
+
+  .contact-grid {
+    gap: 42px;
+  }
+
+  .brief-form {
+    padding:
+      30px
+      24px;
+
+    border-radius: 22px;
+  }
+
+
+  /* =====================================================
+     FOOTER
+  ====================================================== */
+
+  .footer-main {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+
+  /* =====================================================
+     FLOATING CTA
+  ====================================================== */
+
+  .floating-contact {
+    right: 14px;
+
+    bottom:
+      calc(
+        14px
+        +
+        env(safe-area-inset-bottom)
+      );
+
+    min-height: 46px;
+
+    padding:
+      10px
+      14px;
+
+    font-size: 0.68rem;
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE REAL
+   <= 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .container {
+    width: auto;
+
+    max-width: none;
+
+    margin-left:
+      max(16px, env(safe-area-inset-left));
+
+    margin-right:
+      max(16px, env(safe-area-inset-right));
+  }
+
+
+  /* =====================================================
+     HEADER
+  ====================================================== */
+
+  .header-inner {
+    min-height: 68px;
+
+    gap: 8px;
+  }
+
+  .brand {
+    min-width: 0;
+
+    flex: 0 0 auto;
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+
+    flex:
+      0
+      0
+      42px;
+  }
+
+  /*
+     MOBILE:
+     esconder nome para evitar overflow
+  */
+
+  .brand-text {
+    display: none;
+  }
+
+
+  .header-actions {
+    min-width: 0;
+
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+  }
+
+
+  .header-instagram {
+    display: none;
+  }
+
+
+  /*
+     Voltamos a mostrar CTA em celulares
+     grandes, mas compacto.
+  */
+
+  .header-cta {
+    display: inline-flex;
+
+    min-height: 40px;
+
+    max-width: min(148px, 42vw);
+
+    padding:
+      8px
+      12px;
+
+    font-size: 0.61rem;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+  }
+
+  .header-cta span {
+    display: none;
+  }
+
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+
+    flex:
+      0
+      0
+      42px;
+  }
+
+
+  /* =====================================================
+     MOBILE MENU
+  ====================================================== */
+
+  .mobile-menu {
+    padding:
+      8px
+      16px
+      22px;
+  }
+
+  .mobile-menu a {
+    min-height: 50px;
+
+    font-size: 1.35rem;
+  }
+
+
+  /* =====================================================
+     HERO
+  ====================================================== */
+
+  .hero {
+    padding:
+      28px
+      0
+      60px;
+  }
+
+
+  /*
+     NÃO usar width:100%.
+     .hero-grid também possui .container.
+  */
+
+  .hero-grid {
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 38px;
+  }
+
+
+  .hero-content {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .eyebrow {
+    margin-bottom: 20px;
+
+    font-size: 0.61rem;
+
+    letter-spacing: 0.16em;
+
+    white-space: normal;
+  }
+
+
+  h1 {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin-bottom: 26px;
+
+    font-size:
+      clamp(
+        2.85rem,
+        12.5vw,
+        3.45rem
+      );
+
+    line-height: 0.92;
+
+    letter-spacing: -0.05em;
+
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+
+  h1 em {
+    margin-top: 7px;
+  }
+
+
+  /* =====================================================
+     DESCRIÇÃO
+  ====================================================== */
+
+  .hero-description {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 28px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+    overflow-wrap: break-word;
+  }
+
+
+  /* =====================================================
+     HERO BUTTONS
+  ====================================================== */
+
+  .hero-actions {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 16px;
+  }
+
+
+  .hero-actions .button {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 52px;
+
+    padding:
+      13px
+      18px;
+
+    text-align: center;
+
+    white-space: normal;
+  }
+
+
+  .hero-actions .text-link {
+    width: max-content;
+    max-width: 100%;
+
+    align-self: flex-start;
+  }
+
+
+  /* =====================================================
+     TAGS
+  ====================================================== */
+
+  .hero-services {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 34px;
+  }
+
+
+  .hero-services span {
+    flex:
+      0
+      0
+      auto;
+
+    padding:
+      7px
+      10px;
+
+    font-size: 0.56rem;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* =====================================================
+     HERO FOTO
+  ====================================================== */
+
+  .hero-visual {
+    width: 100%;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding:
+      0
+      0
+      4px;
+  }
+
+
+  .hero-photo {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 4 / 5;
+
+    border-radius:
+      82px
+      20px
+      20px
+      20px;
+  }
+
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: 50% 25%;
+
+    transform:
+      scale(1.04);
+  }
+
+
+  .hero-visual:hover
+  .hero-photo img {
+    transform:
+      scale(1.04);
+  }
+
+
+  .hero-monogram {
+    left: -2px;
+
+    font-size: 3.5rem;
+  }
+
+
+  /* =====================================================
+     TYPOGRAPHY
+  ====================================================== */
+
+  h2 {
+    font-size:
+      clamp(
+        2.75rem,
+        12vw,
+        4rem
+      );
+
+    overflow-wrap: break-word;
+  }
+
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+
+
+  /* =====================================================
+     SERVICES
+  ====================================================== */
+
+  .service-content h3 {
+    font-size: 2rem;
+  }
+
+  .service-content p {
+    font-size: 0.88rem;
+  }
+
+
+  /* =====================================================
+     PORTFOLIO
+  ====================================================== */
+
+  .portfolio-grid {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+  }
+
+
+  .portfolio-featured {
+    grid-column: auto;
+  }
+
+
+  .portfolio-featured
+  .portfolio-media,
+  .portfolio-card:not(.portfolio-featured)
+  .portfolio-media {
+    min-height: 0;
+
+    aspect-ratio: 4 / 3;
+  }
+
+
+  .portfolio-media {
+    border-radius: 18px;
+  }
+
+
+  .portfolio-number {
+    top: 14px;
+    left: 14px;
+  }
+
+
+  .play-icon {
+    width: 56px;
+    height: 56px;
+
+    font-size: 1rem;
+  }
+
+
+  .portfolio-view {
+    font-size: 0.61rem;
+  }
+
+
+  .portfolio-info h3 {
+    font-size: 1.6rem;
+  }
+
+
+  /* =====================================================
+     EDITORIAL
+  ====================================================== */
+
+  .editorial-image img {
+    border-radius: 18px;
+  }
+
+
+  /* =====================================================
+     PROCESS
+  ====================================================== */
+
+  .process-number {
+    margin-bottom: 22px;
+  }
+
+
+  .process-item h3 {
+    font-size: 1.8rem;
+  }
+
+
+  /* =====================================================
+     QUOTE
+  ====================================================== */
+
+  .quote-section {
+    padding:
+      80px
+      0;
+  }
+
+
+  /* =====================================================
+     ABOUT
+  ====================================================== */
+
+  .about-photo {
+    padding:
+      18px
+      0
+      0
+      18px;
+  }
+
+
+  .about-photo img {
+    border-radius:
+      82px
+      18px
+      18px
+      18px;
+  }
+
+
+  .about-photo::before {
+    font-size: 3.4rem;
+  }
+
+
+  /* =====================================================
+     AUDIENCE
+  ====================================================== */
+
+  .audience-list span {
+    padding:
+      10px
+      14px;
+
+    font-size: 1.08rem;
+  }
+
+
+  /* =====================================================
+     FINAL CTA
+  ====================================================== */
+
+  .final-cta-card {
+    padding:
+      44px
+      22px;
+
+    border-radius: 22px;
+  }
+
+  .final-cta-actions,
+  .final-cta-actions .button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .final-cta-actions .button {
+    white-space: normal;
+    text-align: center;
+  }
+
+
+  /* =====================================================
+     CONTACT
+  ====================================================== */
+
+  .contact-direct {
+    margin-top: 34px;
+  }
+
+
+  .brief-form {
+    padding:
+      26px
+      20px;
+  }
+
+
+  /* =====================================================
+     FOOTER
+  ====================================================== */
+
+  .site-footer {
+    padding:
+      52px
+      0
+      24px;
+  }
+
+
+  .footer-logo {
+    width: 58px;
+    height: 58px;
+
+    flex-basis: 58px;
+  }
+
+
+  /* =====================================================
+     FLOATING CTA
+  ====================================================== */
+
+  .floating-contact {
+    right:
+      max(12px, env(safe-area-inset-right));
+
+    min-height: 44px;
+
+    padding:
+      9px
+      13px;
+  }
+
+
+  /* =====================================================
+     OVERFLOW SAFETY
+  ====================================================== */
+
+  .hero-content,
+  .hero-visual,
+  .manifesto-grid,
+  .service-item,
+  .service-content,
+  .portfolio-grid,
+  .portfolio-card,
+  .editorial-grid,
+  .process-grid,
+  .about-grid,
+  .audience-list,
+  .final-cta-card,
+  .contact-grid,
+  .brief-form,
+  .footer-main {
+    min-width: 0;
+
+    max-width: 100%;
+  }
+
+
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE MÉDIO
+   <= 390px
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .container {
+    margin-left:
+      max(14px, env(safe-area-inset-left));
+
+    margin-right:
+      max(14px, env(safe-area-inset-right));
+  }
+
+
+  /* HEADER */
+
+  .header-cta {
+    max-width: 132px;
+
+    padding:
+      8px
+      10px;
+
+    font-size: 0.57rem;
+  }
+
+
+  /* HERO */
+
+  h1 {
+    font-size:
+      clamp(
+        2.65rem,
+        12.8vw,
+        3.1rem
+      );
+  }
+
+
+  .hero-description {
+    font-size: 0.87rem;
+  }
+
+
+  .hero-services span {
+    font-size: 0.53rem;
+  }
+
+
+  /* PORTFOLIO */
+
+  .portfolio-info h3 {
+    font-size: 1.48rem;
+  }
+
+
+  /* CTA */
+
+  .button {
+    font-size: 0.76rem;
+  }
+
+
+  /* FORM */
+
+  .brief-form {
+    padding:
+      24px
+      18px;
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE PEQUENO
+   <= 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .container {
+    margin-left:
+      max(12px, env(safe-area-inset-left));
+
+    margin-right:
+      max(12px, env(safe-area-inset-right));
+  }
+
+
+  /* HEADER */
+
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+
+  .header-cta {
+    max-width: 118px;
+
+    font-size: 0.53rem;
+  }
+
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+
+    flex-basis: 40px;
+  }
+
+
+  /* HERO */
+
+  h1 {
+    font-size:
+      clamp(
+        2.55rem,
+        12.8vw,
+        2.9rem
+      );
+  }
+
+
+  .eyebrow {
+    font-size: 0.56rem;
+  }
+
+
+  .hero-services {
+    gap: 6px;
+  }
+
+
+  .hero-services span {
+    padding:
+      6px
+      8px;
+
+    font-size: 0.5rem;
+  }
+
+
+  /* FINAL CTA */
+
+  .final-cta-card {
+    padding:
+      40px
+      18px;
+  }
+
+
+  /* FLOATING */
+
+  .floating-contact span:first-child {
+    display: none;
+  }
+
+
+  .floating-contact {
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    justify-content: center;
+
+    border-radius: 50%;
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE MÍNIMO
+   <= 320px
+========================================================= */
+
+@media (max-width: 320px) {
+
+  .container {
+    margin-left:
+      max(10px, env(safe-area-inset-left));
+
+    margin-right:
+      max(10px, env(safe-area-inset-right));
+  }
+
+
+  /* HEADER */
+
+  .header-cta {
+    display: none;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    padding-top: 24px;
+  }
+
+
+  h1 {
+    font-size:
+      clamp(
+        2.4rem,
+        12.8vw,
+        2.55rem
+      );
+  }
+
+
+  .hero-description {
+    font-size: 0.84rem;
+  }
+
+
+  /* HERO BUTTON */
+
+  .hero-actions .button {
+    padding-inline: 12px;
+
+    font-size: 0.71rem;
+  }
+
+
+  /* PORTFOLIO */
+
+  .portfolio-featured
+  .portfolio-media,
+  .portfolio-card:not(.portfolio-featured)
+  .portfolio-media {
+    aspect-ratio: 1 / 1;
+  }
+
+
+  /* FINAL CTA */
+
+  .final-cta-card h2 {
+    font-size: 2.55rem;
+  }
+
+}
