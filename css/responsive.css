@@ -1,6 +1,6 @@
 /* =========================================================
    JHENNYFER NASCIMENTO
-   SOCIAL MEDIA & VIDEOMAKER
+   VIDEOMAKER
    RESPONSIVE.CSS
 ========================================================= */
 
@@ -818,6 +818,15 @@
     padding-left: 0;
   }
 
+  .services-showcase {
+    margin-top: 64px;
+  }
+
+  .services-showcase-track {
+    grid-auto-columns: min(82vw, 330px);
+    gap: 16px;
+  }
+
 
   /* =====================================================
      PORTFOLIO
@@ -1443,6 +1452,27 @@
 
   .service-content p {
     font-size: 0.88rem;
+  }
+
+  .services-showcase {
+    margin-top: 54px;
+  }
+
+  .services-showcase-heading {
+    margin-bottom: 26px;
+  }
+
+  .services-showcase-heading h3 {
+    font-size: clamp(2.25rem, 11vw, 3.15rem);
+  }
+
+  .services-showcase-heading p {
+    font-size: 0.88rem;
+  }
+
+  .services-showcase-track {
+    margin-right: -16px;
+    padding-right: 16px;
   }
 
 

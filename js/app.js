@@ -635,6 +635,302 @@
 
 
   /* =======================================================
+     CONTROLES DA GALERIA DE SERVIÇOS
+  ======================================================= */
+
+  function initServicesShowcase() {
+    const track =
+      document.querySelector(
+        "#services-showcase-track"
+      );
+
+    const previousButton =
+      document.querySelector(
+        '[data-showcase-direction="previous"]'
+      );
+
+    const nextButton =
+      document.querySelector(
+        '[data-showcase-direction="next"]'
+      );
+
+    if (
+      !track ||
+      !previousButton ||
+      !nextButton
+    ) {
+      return;
+    }
+
+    const cards =
+      Array.from(
+        track.querySelectorAll(
+          ".services-showcase-card"
+        )
+      );
+
+    if (!cards.length) {
+      return;
+    }
+
+    let currentIndex = 0;
+    let currentOffset = 0;
+    let activePointerId = null;
+    let dragStartX = 0;
+    let dragStartOffset = 0;
+    let dragDistance = 0;
+    let suppressClick = false;
+
+    const getCardPosition = (index) => {
+      const styles =
+        window.getComputedStyle(track);
+
+      const gap =
+        parseFloat(styles.columnGap) || 0;
+
+      const cardWidth =
+        cards[0]
+          .getBoundingClientRect()
+          .width;
+
+      return index * (cardWidth + gap);
+    };
+
+    const getClosestIndex = () => {
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+
+      cards.forEach(
+        (card, index) => {
+          const distance =
+            Math.abs(
+              getCardPosition(index) -
+              currentOffset
+            );
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        }
+      );
+
+      return closestIndex;
+    };
+
+    const getMaxOffset = () => {
+      const lastIndex =
+        cards.length - 1;
+
+      const lastCardWidth =
+        cards[lastIndex]
+          .getBoundingClientRect()
+          .width;
+
+      return Math.max(
+        0,
+        getCardPosition(lastIndex) +
+        lastCardWidth -
+        track.clientWidth
+      );
+    };
+
+    const applyOffset = (
+      offset,
+      animate = true
+    ) => {
+      currentOffset =
+        Math.max(
+          0,
+          Math.min(
+            getMaxOffset(),
+            offset
+          )
+        );
+
+      track.classList.toggle(
+        "is-dragging",
+        !animate
+      );
+
+      cards.forEach(
+        (card) => {
+          card.style.transform =
+            `translate3d(${-currentOffset}px, 0, 0)`;
+        }
+      );
+    };
+
+    const updateButtons = () => {
+      currentIndex = getClosestIndex();
+
+      previousButton.disabled =
+        currentIndex === 0;
+
+      nextButton.disabled =
+        currentIndex ===
+        cards.length - 1;
+    };
+
+    const scrollToIndex = (index) => {
+      currentIndex =
+        Math.max(
+          0,
+          Math.min(
+            cards.length - 1,
+            index
+          )
+        );
+
+      applyOffset(
+        getCardPosition(currentIndex)
+      );
+
+      previousButton.disabled =
+        currentIndex === 0;
+
+      nextButton.disabled =
+        currentIndex ===
+        cards.length - 1;
+    };
+
+    previousButton.addEventListener(
+      "click",
+      () => scrollToIndex(currentIndex - 1)
+    );
+
+    nextButton.addEventListener(
+      "click",
+      () => scrollToIndex(currentIndex + 1)
+    );
+
+    track.addEventListener(
+      "pointerdown",
+      (event) => {
+        if (
+          event.pointerType === "mouse" &&
+          event.button !== 0
+        ) {
+          return;
+        }
+
+        activePointerId = event.pointerId;
+        dragStartX = event.clientX;
+        dragStartOffset = currentOffset;
+        dragDistance = 0;
+
+        track.classList.add(
+          "is-dragging"
+        );
+
+        track.setPointerCapture(
+          event.pointerId
+        );
+      }
+    );
+
+    track.addEventListener(
+      "pointermove",
+      (event) => {
+        if (
+          activePointerId !==
+          event.pointerId
+        ) {
+          return;
+        }
+
+        dragDistance =
+          event.clientX - dragStartX;
+
+        if (Math.abs(dragDistance) > 3) {
+          event.preventDefault();
+        }
+
+        applyOffset(
+          dragStartOffset - dragDistance,
+          false
+        );
+      }
+    );
+
+    const finishDrag = (event) => {
+      if (
+        activePointerId !==
+        event.pointerId
+      ) {
+        return;
+      }
+
+      if (
+        track.hasPointerCapture(
+          event.pointerId
+        )
+      ) {
+        track.releasePointerCapture(
+          event.pointerId
+        );
+      }
+
+      suppressClick =
+        Math.abs(dragDistance) > 8;
+
+      activePointerId = null;
+
+      scrollToIndex(
+        getClosestIndex()
+      );
+
+      window.setTimeout(
+        () => {
+          suppressClick = false;
+        },
+        0
+      );
+    };
+
+    track.addEventListener(
+      "pointerup",
+      finishDrag
+    );
+
+    track.addEventListener(
+      "pointercancel",
+      finishDrag
+    );
+
+    track.addEventListener(
+      "click",
+      (event) => {
+        if (!suppressClick) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+      },
+      true
+    );
+
+    window.addEventListener(
+      "resize",
+      () => {
+        applyOffset(
+          getCardPosition(currentIndex),
+          false
+        );
+
+        updateButtons();
+      },
+      {
+        passive: true
+      }
+    );
+
+    updateButtons();
+  }
+
+
+  /* =======================================================
      SEGURANÇA PARA IMAGENS
   ======================================================= */
 
@@ -681,6 +977,8 @@
     initInternalLinks();
 
     initCurrentYear();
+
+    initServicesShowcase();
 
     initImageProtection();
   }
