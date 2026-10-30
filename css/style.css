@@ -465,12 +465,10 @@ p {
 
   flex: 0 0 46px;
 
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 
-  background: #000;
-
-  border-radius: 50%;
+  background: transparent;
 
   box-shadow:
     0 0 0 1px
@@ -2077,11 +2075,9 @@ blockquote > span {
 
   flex: 0 0 72px;
 
-  object-fit: cover;
+  object-fit: contain;
 
-  background: #000;
-
-  border-radius: 18px;
+  background: transparent;
 }
 
 .footer-brand strong,
