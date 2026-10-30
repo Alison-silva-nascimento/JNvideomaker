@@ -1,5 +1,5 @@
 /* =========================================================
-   JHENNYFER NASCIMENTO
+   JHENNYFFER NASCIMENTO
    APP.JS
 ========================================================= */
 
@@ -469,7 +469,7 @@
          */
 
         const whatsappMessage = [
-          "Olá, Jhennyfer! 👋",
+          "Olá, Jhennyffer! 👋",
           "",
           "Conheci seu trabalho pelo site e gostaria de conversar sobre um projeto.",
           "",
